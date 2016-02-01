@@ -26,7 +26,7 @@
       
       <ul class="nav navbar-nav navbar-right">
 	      <% if current_user %>
-	          <li>Signed in as: <%= current_user.name %> - <%= image_tag(@auth['info']['image'], width: '50', heigth: '50', class: 'img-circle') %></li>
+	          <li>Signed in as: <%= current_user.name %> - <%= image_tag(current_user.image_url, width: '50', heigth: '50', class: 'img-circle') %></li>
 	          <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
 	      <% else %>
 	          <li><%= link_to "auth/github" do %><%= image_tag('github.png', width: '40', heigth: '40', class: 'img-circle') %><% end %></li>
