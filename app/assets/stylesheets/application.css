@@ -15,17 +15,25 @@
  */
 
 
+/* Misceleneous */ 
+
 a {
-	color: black;
+	color: grey;
 	text-decoration: none;
 }
 
 a:hover {
-	color: black;
+	color: grey;
 	text-decoration: none;
 }
 
+.align {
+	text-align: center;
+}
 
+ul li {
+	margin-top: 9px;
+}
 
 /* Spinner */
 
