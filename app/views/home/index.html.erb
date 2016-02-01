@@ -1,0 +1,10 @@
+<% if current_user %>
+	<div style="text-align: center;"><p>Your Token is <h4><%= @auth['credentials']['token'] %></h4></p></div>
+	<div class="spinner">
+	  <div class="double-bounce1"></div>
+	  <div class="double-bounce2"></div>
+	</div>
+	<p style="text-align: center;">Processing...</p>
+<% end %>
+
+
