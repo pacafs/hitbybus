@@ -170,10 +170,10 @@ class Fetch
 	    	bus_factor_string: bus_factor_value, 
 	    	releases: releases.count, 
 	    	refactoring: refactoring, 
-	    	prs: prs_value, 
-	    	stars: stars_value, 
-	    	watchers: watchers_value, 
-	    	forks: forks_value
+	    	prs: total_PRs_count, #prs_value,
+	    	stars: repository_info.stargazers_count, #stars_value, 
+	    	watchers: repository_info.subscribers_count, #watchers_value,
+	    	forks: repository_info.forks_count #forks_value
 	    )
 
 	    repository.save
@@ -186,3 +186,4 @@ class Fetch
 	end
 
 end
+
