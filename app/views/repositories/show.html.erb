@@ -1,0 +1,12 @@
+	<div class="list-group">
+	  <button type="button" class="list-group-item"><b><%= @repository.bus_factor %></b></button>
+	  <button type="button" class="list-group-item"><b>Repository:</b> <%= @repository.repos_url %></button>
+	  <button type="button" class="list-group-item"><b>Releases: </b><%= @repository.releases %></button>
+	  <button type="button" class="list-group-item"><b>PRS: </b><%= @repository.prs %></button>
+	  <button type="button" class="list-group-item"><b>Refactoring: </b><%= @repository.refactoring %></button>
+	  <button type="button" class="list-group-item"><b>Stars: </b><%= @repository.stars %></button>
+	  <button type="button" class="list-group-item"><b>Watchers: </b><%= @repository.watchers %></button>
+	  <button type="button" class="list-group-item"><b>Forks: </b><%= @repository.forks %></button>
+	</div>
+
+	<%= link_to "Check another repository", root_path, data: { no_turbolink: true } %>

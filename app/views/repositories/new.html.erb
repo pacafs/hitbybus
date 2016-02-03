@@ -1,0 +1,7 @@
+<h1>Choose your repository</h1>
+
+	<%= form_tag fetch_path, :method => 'get', class: "navbar-form navbar-left"  do %>
+		<%= select_tag 'repos', options_for_select(@results.collect{ |u| [u["full_name"]] }) %>
+		<%= hidden_field_tag :token, @auth['credentials']['token'] %>
+    	<%= submit_tag "HitMewithABus!", :name => nil, class: "btn btn-default" %>
+    <% end %>

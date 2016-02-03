@@ -49,6 +49,7 @@ end
 #MyGems#
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'omniauth-github'
+gem 'github_bus_factor'
 
 
 

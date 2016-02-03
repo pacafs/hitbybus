@@ -14,29 +14,11 @@
  *= require_self
  */
 
-
-/* Misceleneous */ 
-
-a {
-	color: grey;
-	text-decoration: none;
+.my_btn {
+  display: none;
 }
 
-a:hover {
-	color: grey;
-	text-decoration: none;
-}
-
-.align {
-	text-align: center;
-}
-
-ul li {
-	margin-top: 9px;
-}
-
-/* Spinner */
-
+/*Spinner*/
 
 .spinner {
   width: 40px;
@@ -78,5 +60,30 @@ ul li {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
+}
+
+/* Misceleneous */ 
+
+a {
+	color: grey;
+	text-decoration: none;
+}
+
+a:hover {
+	color: grey;
+	text-decoration: none;
+}
+
+.align {
+	text-align: center;
+}
+
+ul li {
+	margin-top: 9px;
+}
+
+.list-group-item {
+  min-width: 500px;
+  max-width: 500px;
 }
 

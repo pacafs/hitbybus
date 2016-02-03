@@ -1,9 +1,19 @@
 <% if current_user %>
-	<div class="align"><p>Token<h4><%= @auth['credentials']['token'] %></h4></p></div>
+
 	<div class="spinner">
 	  <div class="double-bounce1"></div>
 	  <div class="double-bounce2"></div>
 	</div>
-	<p class="align">Processing...</p>
+	
+	<p class="text-center">Fetching repositories...</p>
+
+	<%= form_tag new_repository_path,  :method => 'get', class: "navbar-form navbar-left"  do %>
+		<%= hidden_field_tag :repos_url, @auth['extra']['raw_info']['repos_url'] %>
+		<%= hidden_field_tag :token, @auth['credentials']['token'] %>
+		<%= hidden_field_tag :username, @auth['credentials']['token'] %>
+    	<%= submit_tag "Start", :name => nil, class: "btn btn-default my_btn" %>
+    <% end %>
+    
 <% end %>
+
 

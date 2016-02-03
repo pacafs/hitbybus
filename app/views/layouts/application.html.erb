@@ -6,7 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+
+
+<% if params[:action] == "index" %>
+  <body onload="my_script();">
+<% else %>
+  <body>
+<% end %>
+
+
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -18,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <h1><%= link_to root_path do %>HitByBus<% end %></h1>
+      <h1>HitByBus</h1>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,7 +35,7 @@
       <ul class="nav navbar-nav navbar-right">
 	      <% if current_user %>
 	          <li>Signed in as: <%= current_user.name %> - <%= image_tag(current_user.image_url, width: '50', heigth: '50', class: 'img-circle') %></li>
-	          <li><%= link_to "Sign Out", 'sign_out', method: :delete %></li>
+	          <li><%= link_to "Sign Out", '/sign_out', method: :delete %></li>
 	      <% else %>
 	          <li><%= link_to "auth/github" do %><%= image_tag('github.png', width: '40', heigth: '40', class: 'img-circle') %><% end %></li>
 	      <% end %>
@@ -38,8 +46,21 @@
 </nav>
 
 
+<div class="container">
+
+<% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
 
 <%= yield %>
+</div>
+
+<script type="text/javascript">
+  function my_script(){
+    document.forms[0].submit();
+  };
+</script>
 
 </body>
 </html>
